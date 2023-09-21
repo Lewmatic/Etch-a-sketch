@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#header {
+  padding-top: 30px;
+  text-align: center;
+}
+
+#contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+#grid {
+}
+
+#footer {
+  padding: 10px;
+  text-align: center;
+}
