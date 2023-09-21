@@ -43,13 +43,18 @@ button {
 
 #grid {
   flex-shrink: 0;
+  border: 1px solid black;
 }
 
-.grid-squares {
+.grid-square {
   height: 30px;
   width: 30px;
-  border: 1px solid black;
+  border: none;
   float: left;
+}
+
+.black-square {
+  background-color: black;
 }
 
 .clear {
