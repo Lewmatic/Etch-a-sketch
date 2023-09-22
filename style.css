@@ -37,8 +37,41 @@ button {
   border: 1px solid black;
   border-radius: 5px;
   background-color: black;
-  width: 150px;
-  height: 50px;
+  width: 180px;
+  height: 55px;
+  font-size: large;
+  font-weight: bolder;
+}
+
+@keyframes rainbowText {
+  0% {
+    color: red;
+  }
+  14% {
+    color: orange;
+  }
+  28% {
+    color: yellow;
+  }
+  42% {
+    color: green;
+  }
+  57% {
+    color: blue;
+  }
+  71% {
+    color: indigo;
+  }
+  85% {
+    color: violet;
+  }
+  100% {
+    color: red;
+  }
+}
+
+#rainbow-mode {
+  animation: rainbowText 4s linear infinite;
 }
 
 #grid {
@@ -46,14 +79,14 @@ button {
   border: 1px solid black;
 }
 
-.grid-square {
-  height: 30px;
-  width: 30px;
+.grid-cell {
+  height: 50px;
+  width: 50px;
   border: none;
   float: left;
 }
 
-.black-square {
+.black-cell {
   background-color: black;
 }
 

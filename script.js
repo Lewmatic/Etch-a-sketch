@@ -4,9 +4,9 @@ grid.draggable = false;
 
 for (let i = 0; i < 16; i++) {
   for (let j = 0; j < 16; j++) {
-    const square = document.createElement("div");
-    square.classList.add("grid-square");
-    grid.appendChild(square);
+    const cell = document.createElement("div");
+    cell.classList.add("grid-cell");
+    grid.appendChild(cell);
   }
   const clearDiv = document.createElement("div");
   clearDiv.classList.add("clear");
@@ -18,13 +18,13 @@ let isMouseDown = false;
 function handleMouseOver(event) {
   event.preventDefault();
   if (isMouseDown) {
-    event.target.classList.add("black-square");
+    event.target.classList.add("black-cell");
   }
 }
 
-const squares = grid.querySelectorAll(".grid-square");
-squares.forEach((square) => {
-  square.draggable = false;
+const cells = grid.querySelectorAll(".grid-cell");
+cells.forEach((cell) => {
+  cell.draggable = false;
 });
 
 grid.addEventListener("mousedown", () => {
@@ -35,13 +35,13 @@ grid.addEventListener("mouseup", () => {
   isMouseDown = false;
 });
 
-squares.forEach((square) => {
-  square.addEventListener("mousemove", handleMouseOver);
+cells.forEach((cell) => {
+  cell.addEventListener("mousemove", handleMouseOver);
 });
 
 const clear = document.getElementById("clear");
 clear.addEventListener("click", () => {
-  squares.forEach((square) => {
-    square.classList.remove("black-square");
+  cells.forEach((cell) => {
+    cell.classList.remove("black-cell");
   });
 });
