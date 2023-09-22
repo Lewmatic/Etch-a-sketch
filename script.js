@@ -15,10 +15,17 @@ for (let i = 0; i < 16; i++) {
 
 let isMouseDown = false;
 
-function handleMouseOver(event) {
+function activateNormalMode(event) {
   event.preventDefault();
   if (isMouseDown) {
     event.target.classList.add("black-cell");
+  }
+}
+
+function activateEraser(event) {
+  event.preventDefault();
+  if (isMouseDown) {
+    event.target.classList.remove("black-cell");
   }
 }
 
@@ -36,7 +43,22 @@ grid.addEventListener("mouseup", () => {
 });
 
 cells.forEach((cell) => {
-  cell.addEventListener("mousemove", handleMouseOver);
+  cell.addEventListener("mousemove", activateNormalMode);
+});
+
+const normalMode = document.getElementById("normal-mode");
+normalMode.addEventListener("click", () => {
+  cells.forEach((cell) => {
+    cell.addEventListener("mousemove", activateNormalMode);
+  });
+});
+
+const eraser = document.getElementById("eraser");
+eraser.addEventListener("click", () => {
+  cells.forEach((cell) => {
+    cell.removeEventListener("mousemove", activateNormalMode);
+    cell.addEventListener("mousemove", activateEraser);
+  });
 });
 
 const clear = document.getElementById("clear");
