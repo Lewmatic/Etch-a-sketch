@@ -86,10 +86,6 @@ button {
   float: left;
 }
 
-.black-cell {
-  background-color: black;
-}
-
 .clear {
   clear: both;
 }
